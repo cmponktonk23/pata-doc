@@ -28,6 +28,7 @@ import { IconButton, InputAdornment } from '@mui/material';
 // import { useState } from 'react';
 import { VscSend } from "react-icons/vsc";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import CustomImage from '@site/src/components/CustomImage';
 
 function Footer() {
     // const [email, setEmail] = useState('');
@@ -45,10 +46,10 @@ function Footer() {
         <footer className='flex text-center'>
             <div className='w-full bg-[#211d35] mt-10 px-3 relative'>
                 <div className='absolute h-[260px] overflow-hidden left-20'>
-                    <img src="/img/cloud2.png" alt="cloud2" />
+                    <CustomImage src="/img/cloud2.png" alt="cloud2" />
                 </div>
                 <div className='absolute h-[260px] overflow-hidden right-0'>
-                    <img src="/img/cloud1.png" alt="cloud2" />
+                    <CustomImage src="/img/cloud1.png" alt="cloud2" />
                 </div>
                 <div className='max-w-screen-xl m-auto'>
                     <div className='flex justify-between gap-10 min-h-40 mt-5'>
@@ -132,7 +133,7 @@ function Footer() {
                             />
                         </div> */}
                         <div className='w-52 flex justify-center items-center my-5'>
-                            <img src="/texture/logo_1_w.png" alt="" />
+                            <CustomImage src="/texture/logo_1_w.png" alt="" />
                         </div>
                     </div>
                     <div className='border-b mt-5'></div>
