@@ -1,0 +1,80 @@
+---
+sidebar_position: 1
+---
+
+# Project Setup
+
+## Import Package
+
+Download and import the **Room Building Starter Kit Pro** package to an empty project. 
+
+Follow the steps in `Introduction.pdf` under BuildSystem folder. After finish import the package, there should has two folders under your `Assets` directory: `Plugins` and `RoomBuildingStarterKit`.
+
+<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <img src="/img/room-building-starter-kit/Setup_Project_Page_1_Image_0001.jpg" alt="1" width="200" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Folders under root directory after installation</div>
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <img src="/img/room-building-starter-kit/Setup_Project_Page_1_Image_0002.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Documents</div>
+    </div>
+</div>
+
+## Download and Install Play Maker
+
+Next, go to Asset Store, download and import [Playmaker](https://assetstore.unity.com/packages/tools/visual-scripting/playmaker-368)
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/img/room-building-starter-kit/Setup_Project_Page_1_Image_0003.jpg" alt="3" width="600px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 3. Playmaker in Unity Asset Store</div>
+</div>
+
+After import the playmaker package, you will see a startup window of playmaker. Click Install PlayMaker to install.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+        <img src="/img/room-building-starter-kit/Setup_Project_Page_1_Image_0004.jpg" alt="4" width="400px" style={{ margin: '10px' }}/>
+        <img src="/img/room-building-starter-kit/Setup_Project_Page_1_Image_0005.jpg" alt="5" width="400px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 4. Setup Playermaker</div>
+</div>
+
+After install playmaker, there should has additional two folders `Gizmos` and `PlayMaker` under `Assets` folder.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/img/room-building-starter-kit/Setup_Project_Page_2_Image_0001.jpg" alt="3" width="200px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 0px 0px' }}>Fig 5. Directory Structure After Install Playmaker</div>
+</div>
+
+## Run Demo Scene
+
+Now, we have finished all the setup work. Let’s go to `Assets/RoomBuildingStarterKit/Demo/`, click `Demo_GamePlay` to open the demo scene. Run the demo scene to play it!
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/img/room-building-starter-kit/Setup_Project_Page_2_Image_0002.jpg" alt="3" width="250px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 0px 0px' }}>Fig 6. Directory Structure After Install Playmaker</div>
+</div>
+
+## URP & HDRP packages
+
+**Room Building Starter Kit** also support URP and HDRP. You can see `Install URP` and `Install HDRP` packages under `Assets/RoomBuildingStarterKit/`. 
+
+:::note
+- Always remove folders `Assets`, `Demo` and `Document` before install URP or HDRP. 
+- If you encounter any errors about playmaker after import URP/HDRP package, please reinstall playmaker. The errors will disappear.
+:::
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <img src="/img/room-building-starter-kit/Setup_Project_Page_2_Image_0004.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 7. PlayMaker Errors</div>
+</div>
+
+## Build System Only Package
+
+**Room Building Starter Kit Pro** includes the `BuildSystem-Only` version [Room Building Starter Kit](https://assetstore.unity.com/packages/templates/systems/room-building-starter-kit-170080). You can install it by `Install BuildSystem Only` package. *Remove other files before do this.*
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <img src="/img/room-building-starter-kit/Setup_Project_Page_2_Image_0005.jpg" alt="1" width="200" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Packages for URP and HDRP</div>
+</div>
