@@ -1,0 +1,108 @@
+---
+sidebar_position: 1
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# DynamicPixelCloud Tutorials 
+
+
+## Package content
+
+### Automatically Install
+`Import Package with Install/Upgrade Dependencies Automatically (recommand)`
+
+1. At the beginning of import DynamicPixelCloud packge, it will popup a message window 
+(Fig.1) with content: `“This Unity Package has Package Manager dependencies.”`. Choose 
+`“Install/Upgrade”`, then it will install or upgrade dependencies automatically.
+2. Import all in the DynamicPixelCloud package.(Fig.2)
+3. In project window, goto `DynamicPixelCloud\Assets\Prefabs` folder. Select all prefabs and 
+check their `“Addressable”` box.(Fig.3)
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page1_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Install/Upgrade dependencies automatically</div>
+</div>
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page1_0002.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2.  Package Content</div>
+</div>
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
+        <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page1_0003.jpg" alt="1" width="460" style={{ margin: '10px 20px' }}/>
+        <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page1_0004.jpg" alt="1" width="360" style={{ margin: '10px 20px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. Set Addressable Prefabs</div>
+</div>
+
+
+### Manually Install
+
+`Import Package with Install/Upgrade Dependencies Manually`
+
+Please follow the steps given below. `The order of the steps is important to avoid errors 
+during import package and make sure to get the best demo quality:`
+1. Goto `“Window” >> “Package Manager”`, then click `“Advanced”` and select “`Show preview packages”`;
+2. In the Package Manager window, search and install `“Entities”`;
+3. In the Package Manager window, search and install `“Hybrid Renderer”`;
+4. In the Package Manager window, search and install `“Addressables”`;
+5. In the Package Manager window, search and install `“Post Processing”`;
+6. Goto `“Assets” >> “Import Package” >> “Custom Package...”,` then choose
+`“DynamicPixelCloud.unitypackage”.`
+7. Import all in the package.(Fig.2)
+8. In project window, Goto `DynamicPixelCloud\Assets\Prefabs` folder. Select all prefabs and 
+check their `“Addressable”` box.(Fig.3)
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page2_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 4. Install Packages</div>
+</div>
+
+## Demo Scene
+
+In project window, goto `DynamicPixelCloud\Assets\Scenes.` Open the demo scene and Play it. 
+There has a scene view camera inside. Drag with the right mouse button to move the camera. Drag 
+with the middle mouse button to rotate the camera. Scroll the mouse wheel to control camera 
+zoom in and zoom out.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page2_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 5. Demo Scene</div>
+</div>
+
+## Parameters of the Cloud System
+
+The pixel cloud system consists of many unit cubes. The unit cubes make up different shapes of 
+the cloud. The parameters control the unit cube’s behaviour and scale to determine the appearance 
+of the entire cloud layer.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/cloud/Pixel_Cloud_Image_Page3_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 6. Parameters of the Cloud System</div>
+</div>
+
+**ECS**: Checks it to let the cloud system run in ECS mode. Unchecks it to let the cloud system run 
+in normal mode.
+
+**Rows/Columns**: Determines the cloud area. Increase the rows and columns will get a larger area 
+of clouds.
+
+**Density**: Controls the density of the clouds.
+
+**Maximum Size**: The maximum size that a cloud unit could expand to.
+
+**Transform Scale Multiplier**: The transform scale multiplier will multiply on the scale of each 
+cloud unit.
+
+**Chaos**: Controls the chaos of the clouds.
+
+**Move Speed**: Controls the cloud move speed. 
+
+**Expand Speed**: Controls the cloud unit expand speed.
+
+**Contract Speed**: Controls the cloud unit contract spee.
+
+**Wind Direction**: Controls the cloud move direction.
