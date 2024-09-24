@@ -1,0 +1,133 @@
+---
+sidebar_position: 1
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# Vivid Paper Tutorials 
+
+## Package content
+
+Create a new unity project and download the package in unity asset store, then import the package 
+to project by choosing “Assets”, “Import Package”, “Custom Package” and select the package 
+downloaded. The package structure should be the same as Fig.1: 
+* The `Assets` folder contains six subfolders: Materials, Models, Prefabs, Scripts, Shaders, Textures.
+* The `Demo` folder contains a demo scene detail on: https://www.youtube.com/watch?v=I2C-aJOc-ac
+* The `Document` folder contains a tutorial document. 
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/vividpaper/Vivid_Paper_Image_Page1_0001.jpg" alt="1" width="200" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Package content</div>
+</div>
+
+## Demo Scene
+
+Play the demo scene, there has a paper in center of the window under the game tab. You can also 
+create a paper game object by the paper prefab supplied in Prefabs folder. Click the four corners of 
+the paper and drag the mouse, the paper will deform with the mouse dragging position. When the 
+mouse button up, the paper deformation will be reset smoothly. There is a sphere game object called 
+“Pin” put on center of the paper, when you drag the paper, the paper deformation will be stopped by 
+the sphere. You can copy some pins and put them on the paper, the paper’s deformation will be 
+determined by the combination of pins dynamically. `Notice that the pin game object must be child 
+object of the paper!` You can use this demo to achieve page turning effect in e-book or a 
+poster/sticky note pin on the wall.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/vividpaper/Vivid_Paper_Image_Page1_0002.jpg" alt="1" width="800" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Demo scene</div>
+</div>
+
+## Algorithm
+
+This part is helpful for developers to implement a paper curling effect in different game scene. For 
+example, implement a page turning UI effect to show players some introductions in your game. 
+This algorithm is about wrapping a paper around a cylinder and calculate the vertexes' positions on 
+the paper. First, let's imagine dragging the mouse from a paper's right up corner, and a cylinder 
+whose central axis always pass through the mouse position and perpendicular to the mouse drag 
+direction dynamically, just like Fig.3.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/vividpaper/Vivid_Paper_Image_Page2_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. The cylinder scroll on the paper</div>
+</div>
+
+### Cylinder central axis
+
+The mouse drag direction will be determined by the current mouse position and a corner of the paper, 
+that means as you click and drag the mouse on the paper, the start point of the vector will always be 
+one of the four corners of the paper and the end point is current position of the mouse. You may ask 
+why not calculated the vector by the mouse's position in last frame as the start point and the mouse's 
+position in this frame as the end point. Try it and look the paper's behavior 😀.
+
+Assume we drag the paper at right up corner on 3D coordinate system, the paper is on the xzcoordinate plane and its corner position is `(x0, y0, z0)`. 
+Currently the mouse's position is `(x1, y1, z1). `
+The straight line equation can be derived as `z=(z1-z0)/(x1-x0)*x+z1+(z0-z1)/(x1-x0)*x1`. Then 
+the central axis of the cylinder which is perpendicular to the mouse dragging direction can be derived 
+as `z=(x1-x0)/(z0-z1)*x+z1+(x0-x1)/(z0-z1)*x1`.
+
+### Paper deformation
+
+The right up part of the paper will be wrapped on the cylinder as Fig.4. Let's choose a vertex on the 
+paper, its position is `(xv, yv, zv)`, the distance of the vertex to the cylinder's central axis on xzcoordinate plane is:
+`dist=abs(A*xv+B*zv+C)/sqrt(A*A+B*B), A=(x1-x0)/(y0-y1), B=-1, C=z1+(x0-x1)/(z0-z1)*x1`
+In Fig.4, we can get `θ=dist/R (R is cylinder's radius).` The y position of the vertex on the paper after 
+wrapping on the cylinder is `yv=R-R*cosθ.`
+
+The move direction on xz-coordinate plane of this vertex is `dir=(x1, z1)-(x0, z0).` The xz position 
+of the vertex on the paper after wrapping on the cylinder is `(xv, zv)+normalized(dir)*(dist-R*sinθ)`.
+When the paper wrapped on the cylinder exceed 180 degree, we flatten the exceed part and the 
+position of vertexes on this part can be derived as `(xv, zv)+normalized(dir)*(dist+dist-pi*R)` and `yv=2*R`, if you cannot figure out the equation, just try to draw the image as Fig.4 and 
+wrap the paper on the cylinder.
+
+Another thing we need to do is determine which part of the paper should be wrapped on the cylinder.
+we can use cross product to check if the vertex on the paper is in clockwise direction of the vector 
+which is acquired by rotating the mouse dragging direction 90 degree in clockwise direction. The 
+start point of the vector is `(x1, z1)`, the end point of the vector is `(x2, z2)`, the check point is `(x3, z3)`. 
+The cross product can be expressed as `(x1-x3)*(z2-z3)-(x2-x3)*(z1-z3)`, if the expression is
+negative, the check point is in clockwise direction.
+
+When the mouse button up, the paper needs to be flattened smoothly. This can be implemented by 
+scrolling the cylinder back along the mouse drag direction to the paper's corner.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/vividpaper/Vivid_Paper_Image_Page3_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 4. Wrap the paper on the cylinder</div>
+</div>
+
+###  Paper deformation with considering Pins on it
+
+Let's imagine turning a paper which has a pin on it. The paper curling as you dragging it from right 
+to left until it touches a pin. Unless you tear the paper, it cannot move along current drag direction 
+anymore. We can only drag the paper around the pin, but not turn it exceed the pin. This effect is 
+really easy to implement 😀.
+
+Assume we put lots of pins on a paper, then we drag the paper from right up corner to left as some 
+direction. How could we determine which pin is first touched by the cylinder's central axis? We 
+have derived the direction which is acquired by rotating the mouse drag direction 90 degree in 
+clockwise direction, as `newDir=(z1-z0, x0-x1)`. We only need to set the start point of the vector as 
+a pin's position, and check if there is a pin in clockwise direction of it (just like what we did in above 
+to check which part of the paper should be wrapped on the cylinder). We find a pin which has no 
+pins in clockwise direction of it, and it must be the first pin the cylinder's central axis touches.
+Now, we have the pin's position and just replace the mouse position in above calculation as the pin's 
+position. The steps are:
+1. Drag the mouse and acquire the cylinder's central axis; 
+2. Find the pin which will be first touched by the cylinder's central axis;
+3. Scroll back the cylinder from mouse's position to pin's position with keeping its direction 
+unchanged.
+
+That is the main part of the paper curling effect. And I believe if you figure out the algorithm 
+mentioned above, you can customize a wonderful paper turning effect in your game!
+
+##  Parameters
+
+* `Restore` Speed under “Paper” script determines the paper flatten speed.
+* `Cylinder` Radius under “PaperCurl” shader determines the paper deformation.
+* `Pin Offset` Factor under “PaperCurl” shader determines the influence area of a pin.
+* `Front Tex` under “PaperCurl” shader is the front texture of the paper.
+* `Back Tex` under “PaperCurl” shader is the back texture of the paper.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/vividpaper/Vivid_Paper_Image_Page4_0001.jpg" alt="1" width="500" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 5. Parameters</div>
+</div>
