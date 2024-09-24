@@ -1,0 +1,296 @@
+---
+sidebar_position: 6
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# How To Change Grid (Floor) Size
+
+In this tutorial, I will show you how to change the grid (floor) size in Room Building 
+Starter Kit. `The build system in this asset is made base on grid system. And a grid 
+is equal to a floor in this asset which means the floors in each office constitute the 
+entire grid system.`
+
+
+##  Limitations
+
+Please let me list the limitations of this feature in advance:
+1. The floor can only be square;
+2. The wall length must be same with the floor size, which means a floor can only 
+have four walls around it in four directions (up, down, left, right);
+3. The floor size can’t be changed in play mode;
+4. Consider different users have different requirements, if I add too much functions, 
+some user may need to subtract them. So, here I just supply a place to change the 
+grid size used by the build system scripts. User need to make sure the models used 
+by the build system have the right size compatible with the floor;
+5. When you design your build system models, their origins must at same location 
+with the relative model’s origin in this asset. After you put your models into Unity 
+as a prefab, please make sure its collider shape fits the model size like the built-in 
+models in this asset.
+
+##  Change grid size
+
+By changing the grid size, the work has two parts: `Change the grid size value used by scripts` 
+and `scale or replace the models used by build system`. The models used 
+by build system are associated with the build logic and that’s why it can work 
+precisely in this asset. So, we have some rules need to be followed during design your 
+models. Here, we recommend that determine your floor size first before design all the 
+other models. In this tutorial, all the model size unit is meter.
+
+###  Change grid size used by scripts
+
+Let’s define the floor size as 3.5m x 3.5m. The floor size used by scripts is defined 
+under:
+`“Assets/RoomBuildingStarterKit/Assets/ScriptableObjects/BuildSystemSettings.asset”`
+
+In its inspector window, you can see the default grid size is 2m. In this asset, all the built-in 
+models used by the build system are designed base on the grid size. Here, we change the 
+value to 3.5m.
+After change this value, we have to change all these models’scales or replace to new models. 
+I think most of the users will not use the low poly models inside this asset `:)`
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page2_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. BuildSystemSettings</div>
+</div>
+
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page2_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Change Size To 3.5</div>
+</div>
+
+
+###  Change model size
+
+After you change the grid size, the old offices can’t be used anymore. You need to make 
+new office by using Office Editor. When you play the OfficeEditor scene, you will see 
+the blue print floor and walls become small. Next step, we need to change these models’
+scales or replace to your larger models.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page2_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. Floor And Walls Become Small</div>
+</div>
+
+
+#### BluePrint models
+
+Under `“Assets/RoomBuildingStarterKit/Assets/Prefabs/BluePrint/”`:
+`BluePrintCursor` default size is 2m x 2m, we need change it to 3.5m x 3.5m.
+Notice that the `BluePrintAdditionalFloor` and `BluePrintDeletionFloor` need to 
+change from 2m x 2m to 3.5m x 3.5m either.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page3_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 4. Three Prefabs Change Size to 3.5*3.5</div>
+</div>
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page3_0002.jpg" alt="4" width="350px" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page3_0003.jpg" alt="5" width="363px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 5. BluePrintAdditionalFloor and BluePrintDeletionFloor</div>
+</div>
+
+The `BluePrintAdditionWall`, `BluePrintDeletionWall` and `BluePrintWindowWall`
+have length equal to 2m. We need change their length to 3.5m.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page3_0004.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 6. Three Prefabs Change Size to 3.5</div>
+</div>
+
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page3_0005.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 7. The BluePrintAdditionWall, BluePrintDeletionWall and BluePrintWindowWall</div>
+</div>
+
+
+Under `“Assets/RoomBuildingStarterKit/Assets/Prefabs/Furnitures/Common/”`:
+`BluePrintWindow` also need change size. You can choose the scale multiplier by 
+yourself. Just looks right is fine. However, the `BuildableHintPlane` under the window 
+must be resized from 2m x 2m to 3.5m x 3.5m. Same action need to be done on 
+`BluePrintDoor` and `BluePrintOfficeDoor`.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page4_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Three Prefabs Change Size too</div>
+</div>
+
+
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page4_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 9. The BuildableHintPlane, BluePrintDoor and BluePrintOfficeDoor</div>
+</div>
+
+
+
+Now, the models under blue print mode could compatible with the floor size!
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page4_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 10. Test BluePrint</div>
+</div>
+
+
+Now if you build the office, you will see result in below picture. Next, we need to 
+change the office models.
+
+#### Office models
+
+Under `“Assets/RoomBuildingStarterKit/Assets/Prefabs/OfficeEditor/”`:
+We need to change the length of `OfficeDoor`, `OfficeWall` and `OfficeWindowWall`
+from 2m to 3.5m.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page5_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 11. Four Prefabs Change Size</div>
+</div>
+
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page5_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 12. The OfficeWall, OfficeWindowWall and OfficeDoor</div>
+</div>
+
+
+The `OfficeFloor` need to change size from 2m x 2m to 3.5m x 3.5m.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page5_0003.jpg" alt="1" width="400" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page5_0004.jpg" alt="1" width="300" style={{ margin: '10px' }}/>
+    </div>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 13. Change OfficeFloor Size to 3.5*3.5</div>
+</div>
+
+The `RoomOutsideWall` and `RoomOutsideWindowWall` need to change length from 
+2m to 3.5m.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page6_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 14. Change OutsideWalls' Length to 3.5</div>
+</div>
+
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page6_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 15. RoomOutsideWall and RoomOutsideWindowWall</div>
+</div>
+
+
+Now, let’s build the office in OfficeEditor, it looks right!
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page6_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 16. Test Office in OfficeEditor</div>
+</div>
+
+
+Next, we save this office as a prefab in OfficeEditor and put it into Demo scene. Now, 
+we build a room inside the new office and get below result. The room models’ size also 
+need to be changed.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page7_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 17. RoomSize Not Match</div>
+</div>
+
+
+#### Room models
+
+Currently, there are four kinds of rooms inside the asset. They share the same build 
+logic. So, I just resize working room models as an example. Other room type can follow 
+these steps.
+Under `“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Floors/”`:
+Change the RealRoomFloor_WorkingRoom size from 2m x 2m to 3.5m x 3.5m.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page7_0002.jpg" alt="4" width="450px" style={{margin:'10px'}}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page7_0003.jpg" alt="5" width="250px" style={{margin:'10px'}}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 18. Change RealRoomFloor(WorkingRoom)</div>
+</div>
+
+Under 
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Walls/Outside/Work
+ingRoom/”` and
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Walls/Inside/Worki
+ngRoom/”`:
+Change these walls’ length from 2m to 3.5m.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0001.jpg" alt="4" width="550px" style={{margin:'10px'}}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0002.jpg" alt="5" width="350px" style={{margin:'10px'}}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 19. Change RealRoomOutsideWall(WorkingRoom)</div>
+</div>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0003.jpg" alt="4" width="550px" style={{margin:'10px'}}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0004.jpg" alt="5" width="350px" style={{margin:'10px'}}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 20. Change RealRoomInsideWall(WorkingRoom)</div>
+</div>
+
+Under `“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Doors/”`:
+Change the `RealRoomDoor_WorkingRoom’s` length from 2m to 3.5m. Also don’t 
+forget changing the `BuildableHintPlane’s` size to fit the new floor size.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0005.jpg" alt="4" width="650px" style={{margin:'10px'}}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page8_0006.jpg" alt="5" width="250px" style={{margin:'10px'}}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 21. Change RealRoomDoor(WorkingRoom)</div>
+</div>
+
+Now, we can build a working room with floor size equal to 3.5m!
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page9_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 22. Test WorkingRoom </div>
+</div>
+
+
+Last is the Furniture size. All the furniture models are designed based on floor size. So, 
+after we change the floor size to 3.5m. We need to redesign the furniture or just change 
+its scale. According to the ratio 3.5 : 2 = 1.75, I just need to change the furniture’s scale 
+from 1 to 1.75.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page9_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 23. Change Furniture Size </div>
+</div>
+
+
+Finally, everything looks right now!
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Change_Grid (Floor)_Size_Image_Page9_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 24. Test WorkingRoom's Furnitures </div>
+</div>

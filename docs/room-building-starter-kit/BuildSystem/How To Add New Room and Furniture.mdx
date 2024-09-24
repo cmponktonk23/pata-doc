@@ -1,0 +1,457 @@
+---
+sidebar_position: 3
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# How To Add New Room and Furniture
+
+In this tutorial, I will show you how to add a new room in Room Building Starter Kit.
+
+
+##  Add New Room Type
+
+We will add a reading room by using the exist resources. For adding a new room, first 
+we should add the new room type in:
+`“Assets/RoomBuildingStarterKit/Assets/Scripts/Common/RoomType.cs”`
+
+In this example, let’s add a `“ReadingRoom”`:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page1_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Add New Room Type</div>
+    </div>
+
+
+##  Create New Room Prefab
+
+Here, we can use the exist room prefab to create a new one. Let’s drag the existing 
+working room prefab from Project window to Hierarchy window: 
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Rooms/WorkingRoom.prefab”`
+
+Then drag the WorkingRoom from Hierarchy window back to Project Window, select 
+`Original Prefab` on the Create Prefab popup window, then rename the new prefab to 
+`“ReadingRoom”`:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page1_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Rename new Prefab</div>
+    </div>
+
+
+The hierarchy of ReadingRoom.prefab is:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page2_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. ReadingRoom Prefab</div>
+    </div>
+
+
+Then we select ReadingRoom, check its Inspector window. The red rectangle parts are 
+what we need to modify. First, change the `Room Type` to `Reading Room`:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page2_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 4. Change Room Type</div>
+    </div>
+
+
+##  Create Floor, Door and Wall prefabs
+
+Create a `RealRoomFloor_ReadingRoom.prefab` under:
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Floors/”`
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page3_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 5. Add ReadingRoom Floor</div>
+    </div>
+
+
+Then create a `RealRoomDoor_ReadingRoom.prefab` under:
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Doors/”`
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page3_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 6. Add ReadingRoom Door</div>
+    </div>
+
+
+Create four inside wall prefabs under:
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Walls/Inside/ReadingRoom/”`
+
+`RealRoomInsideDoorWall_ReadingRoom.prefab` for reading room’s inside wall 
+around door;
+`RealRoomInsideWall_ReadingRoom.prefab` for reading room’s inside wall;
+`RealRoomInsideWallCorner_ReadingRoom.prefab` for reading room’s inside wall 
+corner;
+`RealRoomInsideWindowWall_ReadingRoom.prefab` for reading room’s inside 
+wall around window.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page3_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 7. Add ReadingRoom Inside Window</div>
+    </div>
+
+
+Create four outside wall prefabs under:
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/RealRoom/Walls/Outside/ReadingRoom/”`
+
+`RealRoomOutsideDoorWall_ReadingRoom.prefab` for reading room’s outside wall around door;
+`RealRoomOutsideWall_ReadingRoom.prefab` for reading room’s outside wall;
+`RealRoomOutsideWallCorner_ReadingRoom.prefab` for reading room’s outside wall corner;
+`RealRoomOutsideWindowWall_ReadingRoom.prefab` for reading room’s outside wall around window.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page4_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Add ReadingRoom Outside Window</div>
+    </div>
+
+
+##  Change component prefab references
+
+Change the prefab references of the RealRoom prefab to the floor, door and wall 
+prefabs created above:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page4_0002.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 9. Change RealRoom Prefab</div>
+    </div>
+
+
+
+##  Create furniture prefabs
+
+Create furniture prefabs for ReadingRoom under:
+`“Assets/RoomBuildingStarterKit/Assets/Prefabs/Furnitures/ReadingRoom/”`
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page5_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 10. Add ReadingRoom Furniture Prefabs</div>
+    </div>
+
+
+##  Add furniture types
+
+Then we need to add these new furniture types in:
+`“Assets/RoomBuildingStarterKit/Assets/Scripts/Common/FurnitureType.cs”`
+Notice that the FurnitureType’s prefix should be room name like “ReadingRoom_xx”, 
+I made a property drawer for Enum FurnitureType. The drop down menu could be 
+nested by using the room name prefix. Notice that the new furniture type can only be 
+added in the end of the enum list. **`If you insert a new type into the list, all the 
+furniture after it will have wrong type, you need to set these furniture to right type 
+manually.`**
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page5_0002.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 11. Add ReadingRoom Furniture Type</div>
+    </div>
+
+
+##  Change prefabs’ furniture types
+
+Change the furniture prefabs’ `Furniture Type` property to the new added furniture 
+types:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page6_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 12. Change Prefabs' Type</div>
+    </div>
+
+
+If you make a wall furniture like television or blackboard. Don’t forget to check the 
+“Is Wall Furniture” box. This option determines whether a furniture can be built on 
+the wall.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page6_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 13. Chek Wall Furniture</div>
+    </div>
+
+
+##  Create Room Type To Prefab Mappings
+
+This is an important step, we need to create mappings between room type and room 
+prefab. In this example, the mapping is ReadingRoom Type to ReadingRoom prefab.
+Click `Tools > UpdateRoomInfo > Refresh Room Type To Prefab Mappings`. This 
+will create mappings automatically:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page6_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 14. UpdateRoomInfo automatically</div>
+    </div>
+
+
+Check the:
+`“Assets/RoomBuildingStarterKit/Assets/ScriptableObjects/Mappings/RoomTypeToPrefabMapping.asset”`
+
+The reading room mapping should be added:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page7_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 15. Check Room Mapping</div>
+    </div>
+
+
+##  Create Furniture Type To Prefab Mappings
+
+Click `Tools > UpdateRoomInfo > Refresh Furniture Type To Prefab Mappings`. 
+
+This will create mappings automatically.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page7_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 16. Refresh Furniture Automatically</div>
+    </div>
+
+
+Check the:
+`“Assets/RoomBuildingStarterKit/Assets/ScriptableObjects/Mappings/FurnitureTypeToPrefabMapping.asset”`
+The reading room’s furniture mappings should be added:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page8_0001.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 17. Add ReadingRoom's Furniture Mapping</div>
+    </div>
+
+
+##  Create ReadingRoom Shop List Item
+
+Drag:
+“`Assets/RoomBuildingStarterKit/Assets/Prefabs/UI/ShopList/RoomList/UIShopItem_WorkingRoom.prefab`”
+from Project window to Hierarchy window. Then drag it back to Project window to 
+create a new prefab and rename it to `UIShopItem_ReadingRoom`:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page8_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 18. Rename UIShopItem_ReadingRoom</div>
+    </div>
+
+
+In the UIShopItem_ReadingRoom’s hierarchy, change the ItemImage from 
+WorkingRoom to ReadingRoom’s image:
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0001.jpg" alt="4" width="280px" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0002.jpg" alt="5" width="500px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 19. Change ItemImage</div>
+</div>
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 20. Show In UIShopItem</div>
+    </div>
+
+
+Notice that there should has a component named `“Room Shop Item”` attached on the
+UIShopItem_ReadingRoom prefab. The `Room Type` should be `Reading Room`.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0004.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 21. Check RoomType </div>
+    </div>
+
+
+Then we need to add a new UIText for reading room’s name by following `MultiLanguage` document:
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0005.jpg" alt="4" width="300px" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0006.jpg" alt="5" width="420px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 22. Add ItemName For MulityLanguage</div>
+</div>
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0007.jpg" alt="4" width="300px" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page9_0008.jpg" alt="5" width="420px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 23. Add UIText For MulityLanguage</div>
+</div>
+
+##  Create ReadingRoom’s Furniture Shop List Items
+
+Create UIShopItem furniture prefabs according to the furnitures we created for 
+ReadingRoom before. Changes these shop items’ image and UIText same with the 
+room shop item we just made.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page10_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 24. UIShopItem furniture prefab </div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page10_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 25. Shop Item Image and UIText </div>
+    </div>
+
+
+These furniture shop items also should have a component named `“Furniture Shop Item” `
+which has a `Furniture Type` property should be same with their associate 
+furniture types we added above:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page10_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 26. Furniture Type</div>
+    </div>
+
+
+Another thing is you should create an UIShopItem_ReadingRoomDoor prefab with 
+the image of the reading room’s door and choose its `Furniture Type` to `Common/Door`:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page10_0004.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 27. UIShopItem_ReadingRoomDoor prefab</div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page11_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 28. Choose Furniture Type</div>
+    </div>
+
+
+If you want to add furnitures which could build outside room in the office. You should 
+add them in InGameOfficeFurnitureShopList.asset:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page11_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 29. InGameOfficeFurnitureShopList</div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page11_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 30. Add Furniture</div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page11_0004.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 31. Show In UIShopList</div>
+    </div>
+
+
+## Add UIShopItem prefab to RoomShopList
+
+Select:
+`“Assets/RoomBuildingStarterKit/Assets/ScriptableObjects/ShopList/RoomShopList.asset”`
+
+Add UIShopItem_ReadingRoom.prefab into Room Shop List. You can reorder the 
+shop list items, the item order in the shop list determines the item order in the Room 
+Shop List scroll view:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page12_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 32. Add Prefab into List</div>
+    </div>
+
+
+The `RoomListPanel` will use the `RoomShopList` to generate room list scroll view:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page12_0002.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 33. RoomListPanel</div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page12_0003.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 34. Check Room  Shop List</div>
+    </div>
+
+
+## Add UIShopItem prefabs to FurnitureShopList
+
+Goto:
+`“Assets/RoomBuildingStarterKit/Assets/ScriptableObjects/ShopList/FurnitureShopList”`
+
+Right click on the Project window, select `Create > ShopList > RoomTypeShopList`
+to create a new furniture shop list, rename it to “`ReadingRoomFurnitureShopList`”:
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page12_0004.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 35. Create ShopList</div>
+    </div>
+
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page13_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 36. ReadingRoomFurniture</div>
+    </div>
+
+
+Add furniture ShopItems we just created for ReadingRoom in Shop List, then choose 
+`Room Type to Reading Room`. You can reorder the shop list items, the item order in 
+the shop list determines the item order in the Furniture Shop List scroll view.
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page13_0002.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 37. Choose Room Type</div>
+    </div>
+
+
+Next, we need click `FurnitureListPanel` in Hierarchy window. In its `Furniture List Controller` component, 
+add `ReadingRoomFurnitureShopList` we just created. The 
+`FurnitureListPanel` will choose one of the FurnitureShopLists to generate furniture
+list scroll view by current building room’s type:
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap' }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page13_0003.jpg" alt="4" width="300px" style={{ margin: '10px' }}/>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page13_0004.jpg" alt="5" width="420px" style={{ margin: '10px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 20px 0' }}>Fig 38. Add ReadingRoomFurnitureShopList</div>
+</div>
+
+That’s all work we need to do to add a new room!
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page14_0001.jpg" alt="1" width="800" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 38. Build Reading Room</div>
+    </div>
+
+
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <CustomImage src="/img/room-building-starter-kit/How_To_Add_New_Room_and_Furniture_Image_Page14_0002.jpg" alt="1" width="800" style={{ margin: '10px 20px' }}/>
+        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 37. Edit Reading Room</div>
+    </div>
+
+

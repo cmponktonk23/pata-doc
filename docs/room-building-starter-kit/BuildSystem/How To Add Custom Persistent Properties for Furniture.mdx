@@ -1,0 +1,69 @@
+---
+sidebar_position: 4
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# How To Add Custom Persistent Properties for Furniture
+
+In this tutorial, I will show you how to add custom persistent properties for Furniture, like id, name, 
+durality …
+
+
+## Add Custom Properties
+
+Go to and have a look at FurnitureCustomPersistentProperties class at:
+``“Assets/RoomBuildingStarterKit/Assets/Scripts/Components/FurniturePropertiesExample.cs”``
+Here I added three properties: ID, Name and Durality. You can replace to your properties. Notice that 
+all the properties need to add [JsonProperty] attribute for serialized by Newtonsoft.json library.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page1_Image_0001.png" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Add Custom Properties in FurniturePropertiesExample.cs</div>
+</div>
+
+
+## Display and Modify the Properties
+
+Below FurnitureCustomPersistentProperties class, I added an FurniturePropertiesExample class which 
+derived from MonoBehaviour. This is an example class give a way to display and modify the custom 
+properties on the furniture. <mark>Normally, these properties should be changed in game by player or 
+your scripts or NPC interacting with the furniture, but not like what I did in Unity Editor in this 
+doc (Just show you how it works).</mark>
+
+First, let’s add a FurniturePropertiesExample component for WorkingRoom_SmallTable.prefab under:
+``“Assets/RoomBuildingStarterKit/Assets/Prefabs/Furnitures/WorkingRoom”``
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page2_Image_0001.png" alt="3" width="600px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 2. Add a Furniture Prefab</div>
+</div>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page2_Image_0002.png" alt="3" width="600px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 3. Add Component for Prefab</div>
+</div>
+
+Give it a name and set its durality.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page2_Image_0003.png" alt="3" width="600px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 4. Give a name</div>
+</div>
+
+Run the demo scene, blueprint a working room then put a small table, select the table object in 
+Hierarchy window. Move the table, you can see the properties will keep with the table but not reset.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page2_Image_0004.png" alt="3" width="900px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 5. Put New Perfab</div>
+</div>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <CustomImage src="/img/room-building-starter-kit/How_To_Add_Custom_Persistent_Properties_for_Furniture_Page2_Image_0005.png" alt="3" width="900px" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0px 20px 0px' }}>Fig 6. Change Durality</div>
+</div>
+
+Build the room, the properties will keep with the table. Then change its value again. Back to blueprint 
+mode, the properties will be taken to the table under blue print mode which means if you don’t destroy 
+the table the properties can follow with it even though you copy the room. These properties can also be 
+persistent when you save/load game.
