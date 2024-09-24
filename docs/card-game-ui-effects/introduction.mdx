@@ -1,0 +1,85 @@
+---
+sidebar_position: 1
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# Card Game UI Effects Tutorials
+
+## Package content
+
+Create a new unity project and download the package in unity asset store, then import the package 
+to project by choosing “Assets”, “Import Package”, “Custom Package” and select the package 
+downloaded. The package structure should be the same as Fig.1:
+
+* The `Assets` folder contains five subfolders: Animations, Materials, Prefabs, Scripts and Textures.
+The files in these folders included in the demo.
+* The `Demo` folder contains a demo scene details on:
+https://www.youtube.com/watch?v=RsbiRCB6zdI
+* The `Document` folder contains a tutorial document.
+
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/carduieffect/Card_UI_Effects_Image_Page1_0001.jpg" alt="1" width="200" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Package content</div>
+</div>
+
+##  Demo scene
+
+Run the demo scene as Fig.2, the cards in hand will show on the bottom center of unity “Game” 
+window. The draw pile and discard pile locate on the bottom-left and bottom-right corner of the 
+window. For testing the arrow interaction, we put two characters (enemy and attendant) in the 
+demo. The buttons and texts locate on the top of the window. 
+
+### Resolution
+
+The UI effects can work in Free Aspect, but we recommend run the demo under `16:9` for the best 
+performance.
+
+###  Play card
+
+Click the card in hand then an arrow will extend from the card to mouse. When the arrow touches 
+the different characters, its color will change to express hostility or friendly. At this time, click the 
+character will play the card, then the attack effect or health buff effect will display on the enemy 
+or attendant. After that, the card will be thrown into the discard pile.
+
+### Draw/discard
+
+Click the “Draw” button will add a card in hand from the draw pile.Click the “Discard” button 
+will discard all cards in hand to the discard pile. 
+
+Besides the two buttons, the red point with text on top of the draw pile and discard pile used to show the card number in them. 
+When there are no cards left in hand and the draw pile, all the cards will be sent from the discard pile to the draw 
+pile. After that, five cards will be sent to hand automatically.` The demo only supports at most 10 
+cards in hand, please don’t modify the upper limit in the script, which will result in bad 
+performance.`
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/carduieffect/Card_UI_Effects_Image_Page2_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+</div>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/carduieffect/Card_UI_Effects_Image_Page2_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Demo scene</div>
+</div>
+
+## Scripts
+
+The Scripts folder consists of Arrow, Card, Common, Monster, Particle Effects, UI:
+* Files in `Card folder and Arrow folder` are the components of the gameobject “HandCards” in 
+the hierarchy tab. It’s the most import part of this package. All the card effects, interactive arrow 
+and game logic are controlled by this component. The introductions of parameters in this component 
+are commented well with the ToolTip in unity editor, Fig.3.
+* A light weight `EventManager` is implemented in `Common` folder for decouple the UI and game 
+logic.
+* `CameraController` is the camera’s script component, which is used to adapt resolutions of
+different aspects.` This script is only designed for the demo, we don’t focus on working with the 
+multi-screen adaptation, so there are still lots of work to do.`
+* `EffectController` is the component of “AttackEffect” and “HealthBuffEffect” prefab under 
+Prefabs folder. 
+* `ToastController` is the component of “Toast” under the gameobject “UICanvas” in the hierarchy
+tab. Its attribute “duration” controls the duration time of the toast.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/carduieffect/Card_UI_Effects_Image_Page3_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. Parameters of CardEffects component with tooltips</div>
+</div>
