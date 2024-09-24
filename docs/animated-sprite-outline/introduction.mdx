@@ -1,0 +1,253 @@
+---
+sidebar_position: 1
+---
+
+import CustomImage from '@site/src/components/CustomImage';
+
+# Animated Sprite Outline
+
+<CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page1_0001.jpg" alt="1" width="100%" />
+
+
+## Project Setup
+
+### Dependencies
+
+This project need post-process package for the visual effect. Please make sure this package 
+installed in Package Manager. 
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page1_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 1. Post Processing</div>
+</div>
+
+### Color Space
+
+This project is created in `Linear Color Space`. In order to make sure the effects in demo scene 
+look right, please set the project’s color space to linear in `Edit - Project Settings – Player –
+Color Space`.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page2_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 2. Linear Color Space</div>
+</div>
+
+### Setup Universal Render Pipeline
+
+When you run the Universal Render Pipeline Demo, please make sure set the Scriptable Render 
+Pipeline Settings to `“UniversalRenderPipelineAsset” `(which included in this package) in `Edit –
+Project Settings – Graphics – Scriptable Render Pipeline Settings.`
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page2_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 3. UniversalRenderPipelineAsset</div>
+</div>
+
+
+## Demo
+### Outline Effects on 2D Sprite
+
+In the Demo Scene, open the 2D Sprites game object, there are some example sprites under it. 
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page2_0003.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 4. 2D Sprite</div>
+</div>
+
+### Outline Effects on UI Images
+
+In the Demo Scene, open the Screen Space – Camera Canvas, there are some example images 
+under it.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page2_0004.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 5. Screen Space</div>
+</div>
+
+### Shaders / Particle System
+
+There are two shaders and one particle system include in this asset:
+`AnimatedSpriteOutline/Outline Light` and `AnimatedSpriteOutline/Outline Fire` are two 
+outline effects.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page3_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 6. Outline effects</div>
+</div>
+
+`AnimatedSpriteOutline/Particle` is used by ripple effect particles. 
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page3_0002.jpg" alt="1" width="200" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 7. ripple effect</div>
+</div>
+
+## How to use
+
+### 2D Sprite
+
+For apply the outline effects on 2D Sprite, please follow steps below:
+1. The outline effects will performance well on the texture with enough bound paddings. Enlarge 
+the paddings is for avoid cutting the outline's shape. 
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0001.png" alt="1" width="600" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Padding Examples</div>
+</div>
+
+2. Make sure texture `Import Settings – Texture Type is Sprite (2D and UI)` and `Import 
+Settings - Sprite Mode - Mesh Type` recommend to be `Full Rect`; The effects under `Tight 
+Mode` depend on the SpriteRect's paddings. Or you need to set the `Custom Outline in Sprite 
+Editor` to fit the outline effects.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0002.jpg" alt="1" width="340" style={{ margin: '10px 0' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0003.jpg" alt="1" width="325" style={{ margin: '10px 0' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0004.jpg" alt="1" width="240" style={{ margin: '10px 0' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 9. Texture Settings</div>
+</div>
+
+3. Create a new material.
+
+### Light Outline Effect
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0005.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 10. Light Outline Effect</div>
+</div>
+
+4. Select “AnimatedSpriteOutline/Outline Light” shader for the material created on step 3;
+
+5. There are two outlines blend together to determine the outline shape and behaviour;
+
+6. Select your sprite texture as _MainTex. Select `Light.png` as _MaskTexture1 and 
+_MaskTexture2. You can also replace them to your mask textures, these two textures will 
+mask on the outline and rotate in clockwise and counter clockwise. Mask textures determine 
+the outline shape;
+
+7. The _MaskUVScale1 / _MaskUVScale2 determine the scale of the mask textures.
+
+8. The _OutlineColor1 / _OutlineColor2 determine the color of the two outlines. The displayed 
+color of the final outline effects is the mixture of the two colors;
+
+9. The _OutlineWidth1 / _OutlineWidth2 determine the width of outline1 and outline2.
+
+10. The _OutlineWeight1 / _OutlineWeight2 determine the intensity of outline1 and outline2. By 
+default we set the outline1 to a smaller width and larger weight than outline2.
+
+11. The _OutlineFlowSpeed1 / _OutlineFlowSpeed2 determine the light flow speed of outline1 
+and outline2.
+
+12. The _OutlineAccuracy determine the precision of the outline shape, lower accuracy will lead 
+to Jaggies. Recommend set this value to 5, larger value impact the performance and will cause 
+a lower frame rate.
+
+13. The _OutlineMaskAlpha is used for translucent texture. The color of the texture will mix with 
+the outline color without this property. If the minimum alpha of a texture is 0.3. We need to 
+set _OutlineMaskAlpha less than 0.3. That will prevent the outline color blend with the part 
+which has alpha value larger than or equal to 0.3. For the opaque texture, we only need to set 
+the value to 1.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page5_0001.jpg" alt="1" width="380" style={{ margin: '10px 20px' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page5_0002.jpg" alt="1" width="340" style={{ margin: '10px 20px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 11. Outline Effect</div>
+</div>
+
+14. The _BloomFallOff is used to decrease the Bloom post process effect on the sprite. This 
+property is used when you want the bloom effect only applied on the outline effect but not 
+your sprite texture. Increase the _BloomFallOff will decrease the bloom effect on the sprite
+without influence on the outline.
+
+### For Fire / Electric outline effect:
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page6_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 12. For Fire / Electric outline effect</div>
+</div>
+    - Select “AnimatedSpriteOutline/Outline Fire” shader;
+    - There are two outlines blend together to determine the outline shape and behaviour;
+    - The two noise textures will be distorted up towards. Other properties are all same with the Outline Light steps 4~14 mentioned above.
+
+### UI Canvas
+
+For apply the outline effect on UI canvas, please follow steps below:
+1. Although the outline effects can work on Screen Space – Overlay canvas, we recommend set 
+the Canvas Render Mode to Screen Space – Camera. This is due to the post process effect 
+couldn’t work on Screen Space – Overlay, but it can work on Screen Space - Camera. For let 
+the outline effects look nice under the bloom post process effect, we choose Screen Space –
+Camera to display. But you can still use the outline shader on Screen Space – Overlay without 
+post process effect on it.
+
+2. All the other steps are same with 2D Sprite, set the image component material to the outline 
+material we create for 2D Sprite is enough.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 13. UI Canvas</div>
+</div>
+
+### Particle System/Ripple Effect
+
+To make the outline effect more expressive, we made a ripple effect particle system behind the sprite 
+outline.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 14. 2D Sprite</div>
+</div>
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0003.jpg" alt="1" width="280" style={{ margin: '10px 20px' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0004.jpg" alt="1" width="325" style={{ margin: '10px 20px' }}/>
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 15. Ripple Effect</div>
+</div>
+
+By using this particle effect to your sprite. You should follow steps below:
+
+1. Set the Sprite in `Particle System – Texture Sheet Animation` to your sprite texture;
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0005.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 16. Particle System – Texture Sheet Animation</div>
+</div>
+
+2. Create a particle material then choose AnimatedSpriteOutline/Particles as its shader;
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page7_0006.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 17. Particle Material</div>
+</div>
+
+3. Set the `Particle System – Renderer – Material` to the material created in step 2.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page8_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 18. Particle System – Renderer – Material</div>
+</div>
+
+4. Modify the Start Size let the ripple particles fit with your sprite.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page8_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 19. Modify the Start Size</div>
+</div>
+
+5. For changing color of the ripple effect, you could change the Color Tint of the particle material.
+
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+    <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page8_0003.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 20. Change the Color Tint</div>
+</div>
+
+## Video Tutorial
+
+There also has a video tutorial for this asset. [Video Tutorial](https://www.youtube.com/watch?v=SPTqx4cvkFE)
+
+Thank you for using Animated Sprite Outline.
