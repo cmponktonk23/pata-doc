@@ -75,6 +75,10 @@ const config = {
         ({
             // Replace with your project's social card
             image: 'img/docusaurus-social-card.jpg',
+            tableOfContents: {
+                minHeadingLevel: 2,
+                maxHeadingLevel: 4,
+            },
             navbar: {
                 // title: 'PataStudio',
                 logo: {
@@ -101,6 +105,16 @@ const config = {
                         position: 'right',
                     },
                 ],
+            },
+            myfooter: {
+                bglight: 'white',
+                bgdark: '#211d35',
+                headinglight: 'black',
+                textlight: '#333',
+                headingdark: 'white',
+                textdark: '#9a91b1',
+                src: 'img/logo_1_b.png',
+                srcDark: 'img/logo_1_w.png'
             },
             // footer: {
             //     style: 'dark',
