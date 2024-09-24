@@ -23,39 +23,102 @@ import React from 'react';
 // }
 
 
-import { IconButton, InputAdornment } from '@mui/material';
-// import TextField from '@mui/material/TextField';
-// import { useState } from 'react';
-import { VscSend } from "react-icons/vsc";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import style from './styles.module.css';
 import CustomImage from '@site/src/components/CustomImage';
+import { useColorMode } from '@docusaurus/theme-common';
+import { useThemeConfig } from '@docusaurus/theme-common';
+
 
 function Footer() {
-    // const [email, setEmail] = useState('');
-    // const [error, setError] = useState(false);
+    const { myfooter } = useThemeConfig();
+    if (!myfooter) {
+        console.log('noooooooooooooooooooooo')
+    }
+    const { colorMode } = useColorMode();
+    const { bglight, bgdark, textlight, textdark, src, srcDark, headinglight, headingdark } = myfooter;
 
-    // const handleBlur = () => {
-    //     if (email.length > 0 && !email.includes('@')) {
-    //         setError(true);
-    //     } else {
-    //         setError(false);
-    //     }
-    // }
+
+    const styles = {
+        contain: {
+            display: 'flex',
+            textAlign: 'center',
+        },
+        back: {
+            width: '100%',
+            // backgroundColor: '#211d35',
+            backgroundColor: colorMode === 'dark' ? bgdark : bglight,
+            marginTop: '2.5rem',
+            paddingLeft: '0.75rem',
+            paddingRight: '0.75rem',
+            position: 'relative',
+        },
+        cloud1: {
+            position: 'absolute',
+            height: '260px',
+            overflow: 'hidden',
+            left: '5rem',
+        },
+        cloud2: {
+            position: 'absolute',
+            height: '260px',
+            overflow: 'hidden',
+            right: '0px',
+        },
+        panel: {
+            maxWidth: '1280px',
+            margin: 'auto',
+            padding: '10px',
+            position: 'relative', 
+            zIndex: '10'  
+        },
+        content: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '2.5rem',
+            minHeight: '10rem',
+            marginTop: '1.25rem',
+        },
+        footertext: {
+            display: 'flex',
+            flexDirection: 'column',
+            // color: 'white'
+            color: colorMode === 'dark' ? headingdark : headinglight,
+        },
+        linktext: {
+            display: 'flex',
+            flexDirection: 'column',
+            letterSpacing: '0.025em',
+            fontSize: '0.875rem',
+            // color: '#9a91b1',
+            color: colorMode === 'dark' ? textdark : textlight,
+            lineHeight: '0px',
+            cursor: 'pointer',
+            
+        },
+        logo: {
+            width: '13rem',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '1.25rem 0',
+        },
+    }
 
     return (
-        <footer className='flex text-center'>
-            <div className='w-full bg-[#211d35] mt-10 px-3 relative'>
-                <div className='absolute h-[260px] overflow-hidden left-20'>
+        <footer style={styles.contain}>
+            <div style={styles.back}>
+                <div style={styles.cloud1}>
                     <CustomImage src="/img/cloud2.png" alt="cloud2" />
                 </div>
-                <div className='absolute h-[260px] overflow-hidden right-0'>
-                    <CustomImage src="/img/cloud1.png" alt="cloud2" />
+                <div style={styles.cloud2}>
+                    <CustomImage src="/img/cloud1.png" alt="cloud1" />
                 </div>
-                <div className='max-w-screen-xl m-auto'>
-                    <div className='flex justify-between gap-10 min-h-40 mt-5'>
-                        <div className='flex flex-col text-white'>
-                            <p className='font-calistoga text-[19px]'>Resources</p>
-                            <div className='flex flex-col tracking-wide text-sm text-text-color leading-[0px]'>
+                <div style={styles.panel}>
+                    <div style={styles.content}>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '19px' }}>Resources</p>
+                            <div style={styles.linktext}>
                                 <p className='hover:cursor-pointer'
                                     onClick={() => window.location.href = 'http://localhost:8080/assets'}
                                 >
@@ -66,90 +129,39 @@ function Footer() {
                                 >Blogs</p>
                             </div>
                         </div>
-                        <div className='flex flex-col text-white'>
-                            <p className='font-calistoga text-[19px]'>About Us</p>
-                            <div className='flex flex-col tracking-wide text-sm text-text-color leading-[0px]'>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '19px' }}>About Us</p>
+                            <div style={styles.linktext}>
                                 <p>Our Story</p>
                                 <p>Our Team</p>
                             </div>
                         </div>
-                        <div className='flex flex-col text-white'>
-                            <p className='font-calistoga text-[19px]'>Documents</p>
-                            <div className='flex flex-col tracking-wide text-sm text-text-color leading-[0px]'>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '19px' }}>Documents</p>
+                            <div style={styles.linktext}>
                                 <p>Licences</p>
                             </div>
                         </div>
-                        {/* <div className='flex flex-col text-white'>
-                            <p className='font-calistoga text-[19px]'>Contact Us</p>
-                            <TextField
-                                placeholder='example@emial.com'
-                                value={email}
-                                label='Email'
-                                onChange={(e) => setEmail(e.target.value)}
-                                variant="outlined"
-                                onBlur={handleBlur}
-                                error={error}
-                                helperText={error ? 'Email must contain @' : ''}
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                sx={{
-                                                    '&:hover': {
-                                                        backgroundColor: 'rgba(46,36,75,1)'
-                                                    }
-                                                }}
-                                            >
-                                                <VscSend className='text-white' />
-                                            </IconButton>
-                                        </InputAdornment>
-                                    )
-                                }}
-                                sx={{
-                                    '& .MuiOutlinedInput-root': {
-                                        '& fieldset': {
-                                            borderColor: 'white',
-                                        },
-                                        '&:hover fieldset': {
-                                            borderColor: 'white',
-                                        },
-                                        '&.Mui-focused fieldset': {
-                                            borderColor: 'white',
-                                        },
-                                        '& input': {
-                                            color: 'white',
-                                        },
-                                    },
-                                    '& .MuiInputLabel-root': {
-                                        color: 'white',
-                                    },
-                                    '& .MuiInputLabel-root.Mui-focused': {
-                                        color: 'white',
-                                    },
-                                    '& .MuiInputBase-input': {
-                                        color: 'white',
-                                    },
-                                }}
-                            />
-                        </div> */}
-                        <div className='w-52 flex justify-center items-center my-5'>
-                            <CustomImage src="/texture/logo_1_w.png" alt="" />
+                        <div style={styles.logo}>
+                            <CustomImage src={colorMode === 'dark' ? srcDark : src} alt="logo" />
                         </div>
                     </div>
-                    <div className='border-b mt-5'></div>
-                    <div className='flex justify-between items-center'>
-                        <p className='text-sm text-text-color'> Copyright &copy; 2024. Pata Software Development Studio</p>
-                        <div className='flex justify-between items-center'>
-                            <div className='flex items-center gap-6 text-text-color'>
-                                <p className="font-calistoga text-[19px]">
+                    <div style={{ borderBottom: '1px solid', marginTop: '1.25rem', width: '100%', color: 'rgb(200,200,200)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p style={{ fontSize: '14px', lineHeight: '1.25rem', color: colorMode === 'dark' ? textdark : textlight, margin: '0' }}>
+                            Copyright &copy; 2024. Pata Software Development Studio
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: colorMode === 'dark' ? textdark : textlight }}>
+                                <p style={{ fontSize: '19px', display: 'flex', alignItems: 'center', margin: '0' }}>
                                     follow us on
                                 </p>
-                                <div className='flex gap-4 text-text-color text-xl'>
-                                    <FaFacebookF className='cursor-pointer hover:scale-110' />
-                                    <FaLinkedinIn className='cursor-pointer hover:scale-110' />
-                                    <FaTwitter className='cursor-pointer hover:scale-110' />
-                                    <FaInstagramSquare className='cursor-pointer hover:scale-110' />
-                                    <FaYoutube className='cursor-pointer hover:scale-110' />
+                                <div style={{ display: 'flex', gap: '1rem', color: colorMode === 'dark' ? textdark : textlight, fontSize: '1.25rem', lineHeight: '1.75rem', }}>
+                                    <FaFacebookF className={style.social} />
+                                    <FaLinkedinIn className={style.social} />
+                                    <FaTwitter className={style.social} />
+                                    <FaInstagramSquare className={style.social} />
+                                    <FaYoutube className={style.social} />
                                 </div>
                             </div>
                         </div>
