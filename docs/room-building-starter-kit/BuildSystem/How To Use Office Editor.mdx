@@ -7,7 +7,8 @@ import CustomImage from '@site/src/components/CustomImage';
 # How To Use Office Editor
 
 In this tutorial, I will show you how to use the Office Editor to design office in Room
-Building Starter Kit. This tool is designed to customize the office in an in-game editor. 
+Building Starter Kit. This tool is designed to customize the office in an `in-game editor`. 
+
 Without this tool, when we need new office, we have to put the props such as floors, 
 walls, office doors by hand to combine a new office. This tool let us build new office 
 in the same way with building room in demo scene.
@@ -28,7 +29,7 @@ in office editor.
 
 ##  Customize Office
 
-The office editor is an in-game editor which it’s a unity scene and you can only use it
+The office editor is an `in-game editor `which it’s a unity scene and you can only use it
 by running the OfficeEditor.unity scene. Its location is:
 `Assets/RoomBuildingStarterKit/Demo/OfficeEditor.unity`
 
@@ -41,7 +42,7 @@ by running the OfficeEditor.unity scene. Its location is:
 
 After open OfficeEditor.unity, only thing you need to care about it’s the “OfficeEditor” 
 game object in the hierarchy window. By clicking it, from its inspector window, you 
-can see a script component named “Office Editor”. There has a “Map Size” property. 
+can see a script component named `“Office Editor”`. There has a `“Map Size”` property. 
 The map is the base ground we will build our office on and the map size determines the 
 tile number of the ground.
 
@@ -60,9 +61,12 @@ tile number of the ground.
 
 
 The map size ranges from 16x16 to 128x128. Every time you change the map size, the 
-map will be generated automatically. Notice that the map size can only be changed in 
-editor mode. Change the size in play mode will not re-generate the map.
+map will be generated automatically. 
 
+:::note
+The map size can only be changed in 
+editor mode. Change the size in play mode will not re-generate the map.
+:::
 
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <CustomImage src="/img/room-building-starter-kit/How_To_Use_Office_Editor_Image_Page2_0003.jpg" alt="1" width="400" style={{ margin: '10px 20px' }}/>
@@ -116,7 +120,7 @@ prefab for all offices) under:
 
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <CustomImage src="/img/room-building-starter-kit/How_To_Use_Office_Editor_Image_Page4_0001.jpg" alt="1" width="600" style={{ margin: '10px 20px' }}/>
-    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Office Prefab</div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 8. Office Prefabs</div>
 </div>
 
 
@@ -129,12 +133,12 @@ will be created under:
 By clicking the new office prefab, we could find its “Office Controller” script 
 component in its inspector window. What we need to care about is the Office Type 
 property. We need to manually add a new Office Type for it in script. Let’s open 
-“OfficeController.cs” under:
+`“OfficeController.cs”` under:
 `Assets/RoomBuildingStarterKit/Assets/Scripts/Components/OfficeController.cs`
 
 Inside the OfficeType enumerator, let’s add a new office type, here I name it as 
-“TestOffice”, you can name it by yourself. Then in inspector window, we change the 
-Office Type property to “Test Office”. Notice that you can rename the prefab, the 
+`“TestOffice”`, you can name it by yourself. Then in inspector window, we change the 
+Office Type property to `“Test Office”`. Notice that you can rename the prefab, the 
 default name consists of a “Office” prefix and saving time split by underscores.
 
 
@@ -182,12 +186,12 @@ do!
 
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <CustomImage src="/img/room-building-starter-kit/How_To_Use_Office_Editor_Image_Page6_0002.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
-    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 14. Build in New Office</div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 14. Placed New Office and Build a Room on it</div>
 </div>
 
 
 
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <CustomImage src="/img/room-building-starter-kit/How_To_Use_Office_Editor_Image_Page6_0003.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
-    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 15. Test in New Office</div>
+    <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 15. New Office in Demo Scene</div>
 </div>

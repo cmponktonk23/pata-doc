@@ -30,11 +30,15 @@ import CustomImage from '@site/src/components/CustomImage';
 ### Import Package
 
 If you import the package into an empty 3D project. All the dependencies, settings and layers will 
-be setup automatically during package installation. Note that this is an entire project, when import 
-this package you will see a warning popup window told you import this package will overwrite your 
-current project settings. `Please make sure you did backup if you need to import this package to your 
-existing project!`
+be setup automatically during package installation.
 
+:::note
+This is an entire project, when import 
+this package you will see a warning popup window told you import this package will overwrite your 
+current project settings. 
+`Please make sure you did backup if you need to import this package to your 
+existing project!`
+:::
 <p style={{color:'red',}}>If some other assets already exist in your project, please notice that check the project settings assets in 
 import package window will overwrite your current project settings! For example, if you have your 
 own InputMangersettings and Layers/Tags, please clear the checkbox of InputManager.assetand 
@@ -46,21 +50,21 @@ If you encounter any problem when update from an old package to newest package, 
 the old project then reimport the newest package!`
 
 ### Dependencies
-This project need `post-processpackage` for the visual effect and `newtonsoft.json` package for 
+This project need `post-process` package for the visual effect and `newtonsoft.json` package for 
 serializing game data during save/load. Please make sure these two packages installed in Package 
 Manager. 
 
 ### Color Space
 This project is created in `linear color space`. In order to make sure the colors in demo scene look 
-right, please set project’s color space to linear in Edit -Project Settings –Player – Color Space.
+right, please set project’s color space to linear in `Edit -Project Settings –Player – Color Space.`
 
 ### Layers
-The project built-in layers will be added automatically during package import. Please make sure all 
-the layers list in right picture are added correctly.
+The project `built-in` layers will be added automatically during package import. Please make sure all 
+the layers list in below picture are added correctly.
 
 ### Build
-Before build the project, you should create a directory “Assets/StreamingAssets/Data” then put 
-“Assets\RoomBuildingStarterKit\Assets\Config\GameText.json” into that directory.
+Before build the project, you should create a directory `“Assets/StreamingAssets/Data”` then put 
+`“Assets\RoomBuildingStarterKit\Assets\Config\GameText.json”` into that directory.
 
 <CustomImage src="/img/room-building-starter-kit/Introduction_Image_Page3_0001.jpg" alt="1" width="100%"/>
 
@@ -68,7 +72,7 @@ Before build the project, you should create a directory “Assets/StreamingAsset
 
 ### Import Package
 
-After import the package, the “Assets”, “Demo” folders under
+After import the package, the `“Assets”`, `“Demo”` folders under
 `“Assets/RoomBuildingStarterKit/”`
 includes the assets and scenes work in Built-in Standard Render Pipeline. 
 <p style={{color:'red'}}>Before import the URP or HDRP package, you need to delete these two folders first.</p>
@@ -78,10 +82,11 @@ project into two packages:
 `“Assets/RoomBuildingStarterKit/Install URP Assets.unitypackage”`
 `“Assets/RoomBuildingStarterKit/Install HDRP Assets.unitypackage”`
 
-Import one of them, the “Assets” and “Demo” folder prepared for URP/HDRP project 
+Import one of them, the `“Assets”` and `“Demo”` folder prepared for URP/HDRP project 
 will be imported. Run the scenes under the Demo folder, that’s all you need to do!
-During import HDRP assets, there will be a popup window named “Render Pipeline 
-Wizard” as right picture. Don’t worry about the errors displayed on the wizard window. 
+
+During import HDRP assets, there will be a popup window named `“Render Pipeline 
+Wizard”` as below picture. Don’t worry about the errors displayed on the wizard window. 
 The HDRP project has no errors before export to package, after import the package the 
 errors gone, no actions need you to do. The HDRP configurations are all under:
 `“Assets/RoomBuildingStarterKit/Assets/HDRPDefaultResources”`
@@ -110,7 +115,7 @@ This project has all the basic game UI includes main menu and in game menus.
 Start a new game to experience this project.
 
 ### Load Game
-You can save your scene in save menu during game play, then load it in the load menu.
+You can save your scene in `save menu` during game play, then load it in the `load menu`.
 
 ### Settings
 
@@ -191,14 +196,14 @@ furniture.
 Every room should have at least one door. When you build the door, the cursor will auto 
 attach on the blue print wall.
 
-## Window
+### Window
 
 Same with the door, window will auto attach on the wall. About the window, there are 
 some very cool functions: The window will break through the shared walls between two 
 neighbor rooms! (The door has this feature too) When you build a room connect with the 
 office wall. The windows will be auto generated by the office windows!
 
-## Put Furnitures
+### Put Furnitures
 
 Choose a furniture in the list, a furniture cursor will follow your mouse. You can press 
 ‘R’ to rotate it and choose a place to put it on the blue print by clicking left mouse button.
@@ -206,10 +211,11 @@ After put down a furniture on the blue print, move the mouse hovered on it, the 
 will be outlined, then you could raise it up by clicking it. It will follow your mouse, you 
 can put it to any other place on the blue print or press E to remove it.
 
-## *Wall Furnitures
+### *Wall Furnitures
 
 Please see details here: [https://youtu.be/j_lgr6UD0Pk](https://youtu.be/j_lgr6UD0Pk)
-## *Office Furnitures
+
+### *Office Furnitures
 
 Please see details here: [https://youtu.be/Uc-oE3Uufgc](https://youtu.be/Uc-oE3Uufgc)
 
@@ -275,8 +281,8 @@ change it at:
 
 We also give an option to determine two doors’ entrances can 
 overlap or not. This function is used to avoid doors collide if NPC 
-need to push to open the door. When check the “Can Door Entrance 
-Overlap”, no two doors’ entrances can overlap with each other
+need to push to open the door. When check the `“Can Door Entrance 
+Overlap”`, no two doors’ entrances can overlap with each other
 
 <CustomImage src="/img/room-building-starter-kit/Introduction_Image_Page11_0001.jpg" alt="1" width="100%"/>
 <CustomImage src="/img/room-building-starter-kit/Introduction_Image_Page12_0001.jpg" alt="1" width="100%"/>
