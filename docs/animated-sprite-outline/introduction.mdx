@@ -103,7 +103,7 @@ Editor` to fit the outline effects.
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
         <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0002.jpg" alt="1" width="340" style={{ margin: '10px 0' }}/>
-        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0003.jpg" alt="1" width="325" style={{ margin: '10px 0' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0003.jpg" alt="1" width="250" style={{ margin: '10px 0' }}/>
         <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page4_0004.jpg" alt="1" width="240" style={{ margin: '10px 0' }}/>
     </div>
     <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 9. Texture Settings</div>
@@ -153,7 +153,7 @@ the value to 1.
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'end', flexWrap:'wrap'}}>
         <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page5_0001.jpg" alt="1" width="380" style={{ margin: '10px 20px' }}/>
-        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page5_0002.jpg" alt="1" width="340" style={{ margin: '10px 20px' }}/>
+        <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page5_0002.jpg" alt="1" width="380" style={{ margin: '10px 20px' }}/>
     </div>
     <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 11. Outline Effect</div>
 </div>
@@ -163,15 +163,20 @@ property is used when you want the bloom effect only applied on the outline effe
 your sprite texture. Increase the _BloomFallOff will decrease the bloom effect on the sprite
 without influence on the outline.
 
-### For Fire / Electric outline effect:
+### For Fire / Electric outline effect
+
 
 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
     <CustomImage src="/img/animatedoutline/Animated_Sprite_Outline_Image_Page6_0001.jpg" alt="1" width="700" style={{ margin: '10px 20px' }}/>
     <div style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>Fig 12. For Fire / Electric outline effect</div>
 </div>
-    - Select “AnimatedSpriteOutline/Outline Fire” shader;
-    - There are two outlines blend together to determine the outline shape and behaviour;
-    - The two noise textures will be distorted up towards. Other properties are all same with the Outline Light steps 4~14 mentioned above.
+Change step 4-6 from `Outline Light Effect` to `Under step`.
+
+4. Select “AnimatedSpriteOutline/Outline Fire” shader;
+
+5. There are two outlines blend together to determine the outline shape and behaviour;
+
+6. The two noise textures will be distorted up towards. Other properties are all same with the Outline Light steps 4~14 mentioned above.
 
 ### UI Canvas
 
