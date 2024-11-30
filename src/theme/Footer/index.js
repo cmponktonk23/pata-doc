@@ -23,7 +23,7 @@ import React from 'react';
 // }
 
 
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaDiscord, FaTwitter } from "react-icons/fa";
 import style from './styles.module.css';
 import CustomImage from '@site/src/components/CustomImage';
 import { useColorMode } from '@docusaurus/theme-common';
@@ -46,7 +46,6 @@ function Footer() {
         },
         back: {
             width: '100%',
-            // backgroundColor: '#211d35',
             backgroundColor: colorMode === 'dark' ? bgdark : bglight,
             marginTop: '2.5rem',
             paddingLeft: '0.75rem',
@@ -55,53 +54,41 @@ function Footer() {
         },
         cloud1: {
             position: 'absolute',
-            height: '260px',
+            height: '250px',
             overflow: 'hidden',
             left: '5rem',
         },
         cloud2: {
             position: 'absolute',
-            height: '260px',
+            height: '250px',
             overflow: 'hidden',
             right: '0px',
         },
         panel: {
-            maxWidth: '1280px',
+            maxWidth: '960px',
             margin: 'auto',
             padding: '10px',
-            position: 'relative', 
-            zIndex: '10'  
+            position: 'relative',
+            zIndex: '10'
         },
         content: {
             display: 'flex',
             justifyContent: 'space-between',
-            gap: '2.5rem',
+            gap: '3rem',
             minHeight: '10rem',
             marginTop: '1.25rem',
         },
         footertext: {
             display: 'flex',
             flexDirection: 'column',
-            // color: 'white'
             color: colorMode === 'dark' ? headingdark : headinglight,
-        },
-        linktext: {
-            display: 'flex',
-            flexDirection: 'column',
-            letterSpacing: '0.025em',
-            fontSize: '0.875rem',
-            // color: '#9a91b1',
-            color: colorMode === 'dark' ? textdark : textlight,
-            lineHeight: '0px',
-            cursor: 'pointer',
-            
+            '&:hover': {
+                color: 'orange',
+            }
         },
         logo: {
-            width: '13rem',
+            height: '9rem',
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '1.25rem 0',
         },
     }
 
@@ -116,55 +103,49 @@ function Footer() {
                 </div>
                 <div style={styles.panel}>
                     <div style={styles.content}>
-                        <div style={styles.footertext}>
-                            <p style={{ fontSize: '19px' }}>Resources</p>
-                            <div style={styles.linktext}>
-                                <p className='hover:cursor-pointer'
-                                    onClick={() => window.location.href = 'http://localhost:8080/assets'}
-                                >
-                                    All Assets
-                                </p>
-                                <p className='hover:cursor-pointer'
-                                    onClick={() => window.location.href = '/blogs'}
-                                >Blogs</p>
-                            </div>
-                        </div>
-                        <div style={styles.footertext}>
-                            <p style={{ fontSize: '19px' }}>About Us</p>
-                            <div style={styles.linktext}>
-                                <p>Our Story</p>
-                                <p>Our Team</p>
-                            </div>
-                        </div>
-                        <div style={styles.footertext}>
-                            <p style={{ fontSize: '19px' }}>Documents</p>
-                            <div style={styles.linktext}>
-                                <p>Licences</p>
-                            </div>
-                        </div>
                         <div style={styles.logo}>
                             <CustomImage src={colorMode === 'dark' ? srcDark : src} alt="logo" />
                         </div>
-                    </div>
-                    <div style={{ borderBottom: '1px solid', marginTop: '1.25rem', width: '100%', color: 'rgb(200,200,200)' }}></div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <p style={{ fontSize: '14px', lineHeight: '1.25rem', color: colorMode === 'dark' ? textdark : textlight, margin: '0' }}>
-                            Copyright &copy; 2024. Pata Software Development Studio
-                        </p>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: colorMode === 'dark' ? textdark : textlight }}>
-                                <p style={{ fontSize: '19px', display: 'flex', alignItems: 'center', margin: '0' }}>
-                                    follow us on
-                                </p>
-                                <div style={{ display: 'flex', gap: '1rem', color: colorMode === 'dark' ? textdark : textlight, fontSize: '1.25rem', lineHeight: '1.75rem', }}>
-                                    <FaFacebookF className={style.social} />
-                                    <FaLinkedinIn className={style.social} />
-                                    <FaTwitter className={style.social} />
-                                    <FaInstagramSquare className={style.social} />
-                                    <FaYoutube className={style.social} />
-                                </div>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '1.5rem' }}>Resources</p>
+                            <div className={style.linktext}>
+                                <p
+                                    onClick={() => window.location.href = 'https://patastudio.store/blogs'}
+                                >Blogs</p>
+                            </div>
+                            <div className={style.linktext}>
+                                <p
+                                    onClick={() => window.location.href = 'https://patastudio.store/blogs'}
+                                >Tutorials</p>
                             </div>
                         </div>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '1.5rem' }}>Documents</p>
+                            <div className={style.linktext}>
+                                <p
+                                    onClick={() => window.location.href = 'https://patastudio.store/license'}
+                                >Licences</p>
+                            </div>
+                            <div className={style.linktext}>
+                                <p
+                                    onClick={() => window.location.href = 'https://patastudio.store/faq'}
+                                >FAQ</p>
+                            </div>
+                        </div>
+                        <div style={styles.footertext}>
+                            <p style={{ fontSize: '1.5rem' }}>Content Us</p>
+                            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', color: colorMode === 'dark' ? textdark : textlight }}>
+                                <FaFacebookF className={style.social} />
+                                <FaTwitter className={style.social} />
+                                <FaDiscord className={style.social} />
+                            </div>
+                        </div>
+                    </div>
+                    <div style={{ borderBottom: '1.5px solid', width: '100%', color: 'rgba(200,200,200,0.2)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem' }}>
+                        <p style={{ fontSize: '16px', lineHeight: '1.25rem', color: colorMode === 'dark' ? textdark : textlight, margin: '0' }}>
+                            Copyright &copy; {new Date().getFullYear()}. Pata Studio Inc.
+                        </p>
                     </div>
                 </div>
             </div>

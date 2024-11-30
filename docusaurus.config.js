@@ -83,12 +83,12 @@ const config = {
                 // title: 'PataStudio',
                 logo: {
                     alt: 'PataStudio Logo',
-                    src: 'img/logo_1_b.png',
-                    srcDark: 'img/logo_1_w.png'
+                    src: 'img/logo_b.png',
+                    srcDark: 'img/logo.png'
                 },
                 items: [
                     {
-                        href: 'http://localhost:8080/',
+                        href: 'https://patastudio.store/',
                         label: 'Home',
                         position: 'left'
                     },
@@ -113,8 +113,8 @@ const config = {
                 textlight: '#333',
                 headingdark: 'white',
                 textdark: '#9a91b1',
-                src: 'img/logo_1_b.png',
-                srcDark: 'img/logo_1_w.png'
+                src: 'img/logo_studio_b.png',
+                srcDark: 'img/logo_studio.png'
             },
             // footer: {
             //     style: 'dark',
