@@ -1,28 +1,4 @@
 import React from 'react';
-// import { useThemeConfig } from '@docusaurus/theme-common';
-// import FooterLinks from '@theme/Footer/Links';
-// import FooterLogo from '@theme/Footer/Logo';
-// import FooterCopyright from '@theme/Footer/Copyright';
-// import FooterLayout from '@theme/Footer/Layout';
-
-// function Footer() {
-//     const { footer } = useThemeConfig();
-//     // if (!footer) {
-//     //     return null;
-//     // }
-//     // const { copyright, links, logo, style } = footer;
-//     return (
-//         <p>adfasdfasdfsadf</p>
-//         // <FooterLayout
-//         //     style={style}
-//         //     links={links && links.length > 0 && <FooterLinks links={links} />}
-//         //     logo={logo && <FooterLogo logo={logo} />}
-//         //     copyright={copyright && <FooterCopyright copyright={copyright} />}
-//         // />
-//     );
-// }
-
-
 import { FaFacebookF, FaDiscord, FaTwitter } from "react-icons/fa";
 import style from './styles.module.css';
 import CustomImage from '@site/src/components/CustomImage';
@@ -47,7 +23,6 @@ function Footer() {
         back: {
             width: '100%',
             backgroundColor: colorMode === 'dark' ? bgdark : bglight,
-            marginTop: '2.5rem',
             paddingLeft: '0.75rem',
             paddingRight: '0.75rem',
             position: 'relative',
@@ -124,7 +99,7 @@ function Footer() {
                             <div className={style.linktext}>
                                 <p
                                     onClick={() => window.location.href = 'https://patastudio.store/license'}
-                                >Licences</p>
+                                >Licenses</p>
                             </div>
                             <div className={style.linktext}>
                                 <p
@@ -133,7 +108,7 @@ function Footer() {
                             </div>
                         </div>
                         <div style={styles.footertext}>
-                            <p style={{ fontSize: '1.5rem' }}>Content Us</p>
+                            <p style={{ fontSize: '1.5rem' }}>Contact Us</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', color: colorMode === 'dark' ? textdark : textlight }}>
                                 <FaFacebookF className={style.social} />
                                 <FaTwitter className={style.social} />
