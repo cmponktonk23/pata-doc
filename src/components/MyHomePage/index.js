@@ -19,7 +19,7 @@ const FeatureList = [
     src: '/img/card.png',
     description: (
       <>
-        Card Game UI Effects provides everything needed to create professional-grade
+        Card Game Interact UI provides everything needed to create professional-grade
         card game animations and interactions.
       </>
     ),
